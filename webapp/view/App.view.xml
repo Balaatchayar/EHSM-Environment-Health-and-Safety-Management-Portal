@@ -1,0 +1,17 @@
+<!-- <mvc:View controllerName="project1.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    </Page>
+</mvc:View> -->
+
+
+<mvc:View
+    controllerName="project1.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    <!-- Root App control (must be unique, acts as NavContainer) -->
+    <App id="app"/>
+
+</mvc:View>

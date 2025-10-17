@@ -1,0 +1,160 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "project1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.5",
+      "toolsId": "7213c135-08a8-477b-8a19-b1b3a5796c7a"
+    },
+    "dataSources": {
+      "ZGRH_EHSM_BINDING_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZGRH_EHSM_BINDING_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZGRH_EHSM_BINDING_VAN.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZGRH_EHSM_BINDING/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZGRH_EHSM_BINDING_VAN"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "EHSM-display": {
+          "semanticObject": "EHSM",
+          "action": "display",
+          "title": "{{EHSM-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.139.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "project1.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "controlAggregation": "pages",
+    "controlId": "app",
+    "transition": "slide",
+    "type": "View",
+    "viewType": "XML",
+    "viewPath": "project1.view",
+    "async": true
+  },
+  "routes": [
+    {
+      "name": "Login",
+      "pattern": "",
+      "target": "TargetLogin"
+    },
+    {
+      "name": "Dashboard",
+      "pattern": "dashboard",
+      "target": "TargetDashboard"
+    },
+    {
+      "name": "Incident",
+      "pattern": "incident",
+      "target": "TargetIncident"
+    },
+    {
+      "name": "RiskAssessment",
+      "pattern": "risk",
+      "target": "TargetRiskAssessment"
+    }
+  ],
+  "targets": {
+    "TargetLogin": {
+      "viewName": "Login",
+      "viewLevel": 1
+    },
+    "TargetDashboard": {
+      "viewName": "Dashboard",
+      "viewLevel": 2
+    },
+    "TargetIncident": {
+      "viewName": "Incident",
+      "viewLevel": 3
+    },
+    "TargetRiskAssessment": {
+      "viewName": "RiskAssessment",
+      "viewLevel": 3
+    }
+  }
+},
+    "rootView": {
+      "viewName": "project1.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

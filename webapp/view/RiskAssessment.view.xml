@@ -1,0 +1,54 @@
+<mvc:View
+    controllerName="project1.controller.RiskAssessment"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="riskPage" title="Risk Assessment" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox>
+
+                <!-- 🔍 Search Bar -->
+                <SearchField
+                    width="100%"
+                    placeholder="Search by Risk, Member, Role or Regulation"
+                    liveChange=".onSearch"
+                    search=".onSearch" />
+
+                <!-- 📋 Risk Table -->
+                <Table
+    id="riskTable"
+    class="riskTableTheme"
+    inset="false"
+    items="{ path: '/ZGRH_EHSM_RISK' }"
+    mode="SingleSelectMaster"
+    itemPress=".onItemPress">
+
+                    <columns>
+                        <Column><Text text="Risk Key" /></Column>
+                        <Column><Text text="Member" /></Column>
+                        <Column><Text text="Role" /></Column>
+                        <Column><Text text="Regulation" /></Column>
+                        <Column><Text text="Created By" /></Column>
+                        <Column><Text text="Changed By" /></Column>
+                        <Column><Text text="Created On" /></Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem type="Active">
+                            <cells>
+                                <Text text="{RiskKeyReference}" />
+                                <Text text="{AssessmentTeamMember}" />
+                                <Text text="{Role}" />
+                                <Text text="{Regulation}" />
+                                <Text text="{CreatedBy}" />
+                                <Text text="{ChangedBy}" />
+                                <Text text="{path: 'CreatedOnAt', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

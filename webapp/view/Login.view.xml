@@ -1,0 +1,50 @@
+<mvc:View 
+    controllerName="project1.controller.Login" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <!-- Hide SAP default header -->
+    <Page class="loginPage" showHeader="false">
+        <content>
+            <VBox class="loginContainer" alignItems="Center" justifyContent="Center">
+
+                <!-- Company Logo -->
+                <Image src="images/Kaar-Logo.png" width="130px" class="sapUiSmallMarginBottom"/>
+
+                <!-- Main Heading -->
+                <Title text="EHSM Portal" level="H1" class="portalTitle sapUiSmallMarginBottom"/>
+
+                <!-- Login Card -->
+                <Panel headerText="Login" class="loginPanel">
+                    <VBox class="sapUiSmallMargin">
+                        
+                        <!-- Employee ID -->
+                        <Label text="Employee ID" labelFor="empIdInput"/>
+                        <Input id="empIdInput" placeholder="Enter Employee ID"
+                               valueStateText="Employee ID is required"
+                               class="sapUiSmallMarginBottom"/>
+
+                        <!-- Password -->
+                        <Label text="Password" labelFor="passwordInput"/>
+                        <Input id="passwordInput" type="Password" placeholder="Enter Password"
+                               valueStateText="Password is required"
+                               class="sapUiSmallMarginBottom"/>
+
+                        <!-- Login Button -->
+                        <Button text="Login" type="Emphasized" press="onLoginPress" width="100%"
+                                class="sapUiMediumMarginTop"/>
+
+                        <!-- Forgot Password link -->
+                        <Link text="" press="onForgotPassword"
+                              class="sapUiTinyMarginTop"/>
+                    </VBox>
+                </Panel>
+
+                <!-- Footer -->
+                <Text text="© 2025 Kaar Tech" class="sapUiSmallMarginTop"/>
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>
