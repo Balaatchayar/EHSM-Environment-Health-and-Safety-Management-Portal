@@ -1,3 +1,16 @@
+# EHSM (Environment, Health, and Safety Management) Portal
+
+Built using SAP BTP, this portal helps safety engineers track incidents and perform risk assessments within the plant, ensuring compliance and preventive safety measures.
+
+## UI Frontend
+
+![Screenshot 1](webapp/ehsm.png)
+
+
+
+
+
+
 ## Application Details
 |               |
 | ------------- |
@@ -34,6 +47,7 @@ An SAP Fiori application.
 ```
     npm run start-mock
 ```
+
 
 #### Pre-requisites:
 
